@@ -406,6 +406,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
+  leftRotate: {fileID: 842869395853869140}
+  rightRotate: {fileID: 9163783831745670479}
 --- !u!114 &1783944621789145711
 MonoBehaviour:
   m_ObjectHideFlags: 0

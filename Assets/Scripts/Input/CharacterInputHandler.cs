@@ -43,7 +43,7 @@ public class CharacterInputHandler : MonoBehaviour
         moveInputVector.x = Input.GetAxis("Horizontal");
         //moveInputVector.y = Input.GetAxis("Vertical");
 
-        if (moveInputVector.x != 0)
+        /*if (moveInputVector.x != 0)
         {
             Debug.Log(moveInputVector.x);
             if (moveInputVector.x < 0)
@@ -54,7 +54,7 @@ public class CharacterInputHandler : MonoBehaviour
             {
                 transform.rotation = Quaternion.Euler(Vector3.zero);
             }
-        }
+        }*/
 
         if (Input.GetButtonDown("Jump"))
         {

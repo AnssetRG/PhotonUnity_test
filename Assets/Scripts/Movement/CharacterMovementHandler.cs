@@ -7,6 +7,9 @@ public class CharacterMovementHandler : NetworkBehaviour
 {
     Vector2 viewInput;
 
+    [SerializeField] private Transform leftRotate;
+    [SerializeField] private Transform rightRotate;
+
     //Other components
     NetworkCharacterControllerCustom networkCharacterControllerPrototypeCustom;
 
@@ -34,6 +37,21 @@ public class CharacterMovementHandler : NetworkBehaviour
             //Vector3 moveDirection = transform.forward * networkInputData.movementInput.y + transform.right * networkInputData.movementInput.x;
             Vector3 moveDirection = networkInputData.movementInput;
             moveDirection.Normalize();
+
+            if (networkInputData.movementInput.x != 0)
+            {
+                Debug.Log(networkInputData.movementInput.x);
+                if (networkInputData.movementInput.x < 0)
+                {
+                    transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+                }
+                else if (networkInputData.movementInput.x > 0)
+                {
+                    transform.rotation = Quaternion.Euler(Vector3.zero);
+                }
+            }
+
+
 
             networkCharacterControllerPrototypeCustom.Move(moveDirection);
 
